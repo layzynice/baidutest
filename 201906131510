@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+      let result = document.getElementById('result');
+      function dec2bin(decNumber) {
+        if (isNaN(decNumber)) {
+          result.innerHTML = `请输入一个十进制非负整数`;
+          return;
+        }
+        if (decNumber < 0 || decNumber % 1 !== 0) {
+          result.innerHTML = `请输入一个非负整数`;
+          return;
+        }
+        let arr = []
+
+        while (decNumber) {
+          arr.unshift(decNumber % 2);
+          if (decNumber > 0) {
+            decNumber = parseInt(decNumber / 2)
+          } else {
+            break;
+          }
+        }
+        console.log(Number(arr.join('')))
+
+        result.innerHTML=  Number(arr.join(''))
+      }
+      document.getElementById('trans-btn').onclick = function() {
+        dec2bin(document.getElementById('dec-number').value)
+      }
+    </script>
+</body>
+</html>
