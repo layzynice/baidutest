@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <script>
+      function getPA() {
+        let arr = []
+        for(let i = 1; i <= 100; i ++) {
+          if (i % 3 == 0 || /3/.test(i.toString())) {
+            arr.push('PA')
+          } else {
+            arr.push(i)
+          }
+        }
+        console.log(arr.join(','))
+      }
+      getPA()
+    </script>
+    <script>
+      function multiplication() {
+        let tStr = ''
+        for(let i = 1; i <= 9; i++) {
+          let str = ''
+          for(let j = 1; j <=i; j ++) {
+            str += ` <td>${i} * ${j} = ${j *i} </td>`
+          }
+          console.log( str)
+          tStr +=`<tr>${str} </tr>`
+        }
+        document.write(`<table> ${tStr}</table>`)
+      }
+      multiplication()
+    </script>
+    <script>
+      var date = new Date();
+      var dateHour = date.getHours();
+      if(dateHour > 0 && dateHour <= 6) alert("熬夜伤身啊大兄弟！");
+      else if(dateHour > 6 && dateHour <= 11) alert("早上好啊，该吃早饭了！");
+      else if(dateHour > 11 && dateHour <= 13) alert("中午好啊，该吃中饭了！");
+      else if(dateHour > 13 && dateHour <= 18) alert("下午好啊，好好工作哈！");
+      else if(dateHour > 18 && dateHour <= 23) alert("休息休息准备睡觉把！");
+    </script>
+</body>
+</html>
